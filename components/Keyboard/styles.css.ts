@@ -17,11 +17,9 @@ export const blackKeyBase = style({
   height: '2.5rem',
   backgroundColor: 'black',
   border: '1px solid white',
-  position: 'relative',
-  left: '25%',
 });
 
-export const blackKeyVariants = styleVariants<Record<PcName, ComplexStyleRule>>(
+export const blackKeyGridArea = styleVariants<Record<PcName, ComplexStyleRule>>(
   {
     Db: [blackKeyBase, { gridArea: 'Db' }],
     Eb: [blackKeyBase, { gridArea: 'Eb' }],
@@ -33,18 +31,18 @@ export const blackKeyVariants = styleVariants<Record<PcName, ComplexStyleRule>>(
 
 export const blackKeyContainer = style({
   display: 'grid',
+  gridTemplateColumns: 'repeat(7, 2.5rem)',
+  gridTemplateAreas: '"Db Eb . Gb Ab Bb ."',
   justifyItems: 'flex-end',
-  gridTemplateColumns: 'repeat(7,1fr)',
-  gridTemplateRows: 'auto',
-  gridTemplateAreas: '"Db Eb empty Gb Ab Bb"',
   gridColumn: '1/8',
   position: 'relative',
   top: '2.5rem',
+  left: '0.5rem',
   marginTop: '-2.5rem',
 });
 
 export const keyboardContainer = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(7,1fr)',
-  width: '33%',
+  gridTemplateColumns: 'repeat(7, 2.5rem)',
+  gridTemplateAreas: '"C D E F G A B"',
 });
